@@ -7,10 +7,54 @@ public class ListMain {
 		
 		testeTemperatura();
 		testeAluno();
+		testCurso();
 		
 
 		
 
+	}
+
+	private static void testCurso() {
+
+		 LinkedList<Curso> node = new LinkedList<>();
+			
+	        //CONFERE SE A LISTA ESTA VAZIA.
+	        if(node.isEmpty()) {
+	        	System.out.println("Lista Vazia!!");
+	        }else {
+	        	System.out.println(" Não esta vazia ");
+	        }
+	        
+	        //ADICIONA FINAL.
+			node.adiciona(new Curso(1,"LOGISTICA",2,"EXATAS"));
+			node.adiciona(new Curso(2,"Analise e dessenvolvimento de sistemas",6,"EXATAS"));
+			
+			//Adiciona no Meio
+			node.adionaMeio(new Curso(3,"Recursos Humanos",6,"Humanas"));
+	        
+			System.out.println(node.toString());
+	        //ADICIONA NO COMEÇO.
+	        node.adiconaNocomeco(new Curso(8,"Administração",2,"EXATAS"));
+	        
+	       
+			
+			//Adiciona em posição na posição 3
+			node.adiciona(new Curso(2154,"Engenharia Eletrica",10,"EXATAS"));
+			//remove final
+			node.removeFinal();
+			System.out.println(node.toString());
+			//remove do inicio
+			node.removeFirst();
+			System.out.println(node.toString());
+			node.adiciona(2, new Curso(2154,"Matematica",2,"EXATAS"));
+			//Remove no meio
+			node.removeMeio();
+			
+			System.out.println(node.toString());	
+			Curso curso  = node.removePosition(2).getElemento();
+			System.out.println("Aluno "+curso.toString());
+			System.out.println(node.toString());
+		
 	}
 
 	private static void testeAluno() {
